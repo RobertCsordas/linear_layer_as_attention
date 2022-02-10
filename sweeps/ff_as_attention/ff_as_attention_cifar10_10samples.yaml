@@ -1,0 +1,39 @@
+program: main.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: validation/valid/accuracy/deeper_val
+  goal: maximize
+parameters:
+  log:
+    value: wandb
+  task:
+    value: cifar10_ff_attention
+  stop_after:
+    value: 5000
+  lr:
+    value: 3e-3
+  dropout:
+    value: 0.0
+  wd:
+    value: 0
+  optimizer:
+    value: sgd
+  batch_size:
+    value: 128
+  layer_sizes:
+    value: "800,800"
+  ff_as_attention.analyze_n_samples:
+    value: 10
+  sweep_id_for_grid_search:
+    distribution: categorical
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5

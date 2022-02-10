@@ -1,0 +1,16 @@
+torch
+cython
+tqdm
+psutil
+matplotlib
+tensorboard
+future
+filelock
+setproctitle
+wandb
+dataclasses
+pillow
+torchvision
+ninja
+moviepy
+plotly

@@ -1,0 +1,45 @@
+program: main.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: validation/valid/accuracy/deeper_val
+  goal: maximize
+parameters:
+  log:
+    value: wandb
+  task:
+    value: language_lstm_ff_attention_overfit
+  profile:
+    value: enwik8_lstm
+  stop_after:
+    value: 5000
+  state_size:
+    value: 1024
+  embedding_size:
+    value: 64
+  n_layers:
+    value: 1
+  dropout:
+    value: 0.0
+  batch_size:
+    value: 64
+  save_interval:
+    value: 1000000000
+  tied_embedding:
+    value: 0
+  grad_clip:
+    value: 1.0
+  lm.example_context:
+    value: 50
+  lm.example_window:
+    value: 50
+  lm.state_drop_probability:
+    value: 1.0
+  ff_as_attention.hugepath:
+    value: /data/tmp
+  lr:
+    value: 1e-3
