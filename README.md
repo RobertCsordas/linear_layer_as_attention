@@ -1,4 +1,4 @@
-The official repository for our paper "The Dual Form of Neural Networks Revisited: Connecting Test Time Predictions to Training Patterns via Spotlights of Attention".
+The official repository for our paper [The Dual Form of Neural Networks Revisited: Connecting Test Time Predictions to Training Patterns via Spotlights of Attention](https://arxiv.org/abs/2202.05798).
 
 
 ## Installation
