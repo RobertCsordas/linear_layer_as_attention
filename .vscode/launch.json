@@ -88,6 +88,19 @@
         },
 
         {
+            "name": "CIFAR 10 FF attention",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["--name", "cifar10_ff_attention", "--task", "cifar10_ff_attention", "--log", "tb",
+                     "--keep_alive", "1", "-reset", "1", "-stop_after", "1000",
+                     "-save_interval", "10000000000", "-lr", "3e-3", "-dropout", "0.0",
+                    "-wd", "0", "-optimizer", "sgd", "-batch_size", "128",
+                    "-test_interval", "1000", "-layer_sizes", "800,800"]
+        },
+
+        {
             "type": "python",
             "request": "launch",
             "name": "Debug File",

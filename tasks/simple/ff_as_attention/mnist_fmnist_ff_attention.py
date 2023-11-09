@@ -431,6 +431,8 @@ class MnistFmnistFFAttention(SimpleTask):
                     score_per_label = torch.stack([s[:, lm].sum(-1) for lm in labelmasks], 0).view(10, len(self.raw_datasets), -1)
                     score_var_norm = score_per_label.mean(0) / score_per_label.std(0)
 
+                    badmask = badmask.to(score_var_norm.device)
+
                     score_per_label_sum_good[lname] += score_var_norm[:, ~badmask].sum(-1)
                     score_per_label_sqsum_good[lname] += score_var_norm[:, ~badmask].pow(2).sum(-1)
                     score_per_label_sum_bad[lname] += score_var_norm[:, badmask].sum(-1)
