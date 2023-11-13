@@ -26,13 +26,13 @@ The code makes use of Weights and Biases for experiment tracking. In the "sweeps
 To reproduce our results, start a sweep for each of the YAML files in the "sweeps" directory. Run wandb agent for each of them in the main directory. This will run all the experiments, and they will be displayed on the W&B dashboard.
 ### Re-creating plots from the paper
 
-Edit config file "paper/config.json". Enter your project name in the field "wandb_project" (e.g. "username/modules"). Edit the files in ```paper/ff_as_attention``` to point to the right runs.
+Edit config file "paper/ff_as_attention/config.json". Enter your project name in the field "wandb_project" (e.g. "username/ff_as_attention").
 
-Run the script of interest within the "paper" directory. For example:
+Run the script of interest within the "paper/ff_as_attention" directory. For example:
 
 ```bash
-cd paper
-python3 plot_scan_accuracies.py
+cd paper/ff_as_attention
+python3 cifar10_ff_attention.py
 ```
 
-The output will be generated in the "paper/out/" directory.
+The output will be generated in the "paper/ff_as_attention/out/" directory.
